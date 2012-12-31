@@ -1,0 +1,28 @@
+ 
+/* Samsung Galaxy */
+@media screen and (device-width: 800px) { html { zoom: 81.21827%; } }
+/* Kindle Fire */
+@media screen and (device-width: 600px) { html { zoom: 60.91370%; } }
+/* iPad */
+@media screen and (device-width: 768px) { html { zoom: 77.96954%; } }
+
+@media only screen and (-webkit-device-pixel-ratio: .75) {
+  /* CSS for Low-density Android screens goes here *
+   * Ex: HTC Evo, HTC Incredible, Nexus One */
+}
+
+@media only screen and (-webkit-device-pixel-ratio: 1) and (max-device-width: 768px) {
+  /* CSS for Medium-density Android screens goes here *
+   * Ex: Samsung Ace, Kindle Fire, Macbook Pro *
+   * max-device-width added so you don't target laptops and desktops */
+}
+
+@media only screen and (-webkit-device-pixel-ratio: 1.5) {
+  /* CSS for High-density Android screens goes here *
+   * Ex: Samsung Galaxy SII, HTC Nexus One, HTC Evo 3D */
+}
+
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  /* CSS for Ultra-high-density (Retina) Android screens goes here *
+   * Ex: Samsung Galaxy SIII, HTC Evo LTE, Samsung Galaxy Nexus */
+} 

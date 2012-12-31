@@ -1,0 +1,160 @@
+/**
+***************************************************************************************************
+ * @Software    AjaxMint Gallery
+ * @Author      Rajapandian - arajapandi@gmail.com
+ * @Copyright	Copyright (c) 2010-2011. All Rights Reserved.
+ * @License		GNU GENERAL PUBLIC LICENSE
+ **************************************************************************************************
+ This source code is licensed under the terms of the GNU GENERAL PUBLIC LICENSE
+ http://www.gnu.org/licenses/gpl.html
+ **************************************************************************************************
+ Copyright (c) 2010-2011 http://ajaxmint.com. All Rights Reserved.
+ **************************************************************************************************
+**/
+
+@charset "utf-8";
+
+body {
+    margin:0;
+    padding:0;
+    font: bold 11px/1.5em Verdana;
+}
+
+select {
+	width:380px;
+}
+h2 {
+    font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    margin: 0px;
+    padding: 0px 0px 0px 15px;
+}
+
+.admin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	padding-top:10px;
+    padding-bottom:10px;
+	text-align: left;
+}
+
+.textred { 
+	color:red;
+}
+
+.textredbold { 
+	color:red;
+	font-size:14px;
+	padding-left:10px;
+	font-weight:bold;
+}
+
+.button { 
+	border:1px solid #999999;
+
+}
+.clear {
+	clear:both;
+}
+/* Tables */
+.tborder {
+	background:#fff;
+	border:1px solid #ccc;
+	border-right:0;
+	clear: both;
+	color: #000;
+}
+.tborder th {
+	background: #cdcdcd;
+	border:1px solid #bbb;
+	height:25px;	
+	padding-left:2px;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	text-align: left;
+}
+.tborder th a {
+	background:#f2f2f2;
+	display: block;
+	text-decoration: none;
+}
+.tborder th a:hover {
+	background: #ccc;
+	color: #333;
+	text-decoration: none;
+}
+
+.tborder  {
+	background: #fff;
+	border-right: 1px solid #ccc;
+	padding: 4px;
+	height:25px;
+	text-align:left;
+	vertical-align: top;
+}
+.bborder tr {
+	height:50px;
+}
+
+.tborder tr.altrow td {
+    background: #f4f4f4;
+}
+
+.tborder td.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+	
+.tborder td.actions a {
+	margin: 0px 6px;
+}
+
+#tabsB {
+
+  font-size:93%;
+  line-height:normal;
+  }
+#tabsB ul {
+	margin:0;
+	padding:10px 10px 0 5px;
+	list-style:none;
+  }
+#tabsB li {
+  display:inline;
+  margin:0;
+  padding:0;
+  }
+#tabsB a {
+  float:left;
+  background:url("../images/tableftB.gif") no-repeat left top;
+  margin:0;
+  padding:0 0 0 4px;
+  text-decoration:none;
+  }
+#tabsB a span {
+  float:left;
+  display:block;
+  background:url("../images/tabrightB.gif") no-repeat right top;
+  padding:5px 15px 4px 6px;
+  color:#666;
+  }
+
+#tabsB a span {float:none;}
+
+#tabsB a:hover span {
+  color:#000;
+  }
+#tabsB a:hover {
+  background-position:0% -42px;
+  }
+#tabsB a:hover span {
+  background-position:100% -42px;
+  }
+
+	#tabsB #current a {
+			background-position:0% -42px;
+	}
+	#tabsB #current a span {
+			background-position:100% -42px;
+	}

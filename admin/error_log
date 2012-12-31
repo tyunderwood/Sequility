@@ -1,0 +1,14 @@
+[04-Nov-2012 09:17:08] PHP Notice:  Undefined variable: settings in /home/sequilit/public_html/admin/index.php on line 42
+[04-Nov-2012 09:17:08] PHP Warning:  Invalid argument supplied for foreach() in /home/sequilit/public_html/admin/index.php on line 42
+[04-Nov-2012 09:17:08] PHP Fatal error:  Allowed memory size of 262144 bytes exhausted (tried to allocate 4864 bytes) in /home/sequilit/public_html/system/libs/response.php on line 57
+[04-Nov-2012 09:19:12] PHP Warning:  require_once(../settings.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/sequilit/public_html/admin/index.php on line 21
+[04-Nov-2012 09:19:12] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../settings.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sequilit/public_html/admin/index.php on line 21
+[06-Nov-2012 10:11:50] PHP Fatal error:  Allowed memory size of 12582912 bytes exhausted (tried to allocate 3840 bytes) in /home/sequilit/public_html/system/libs/image.php on line 71
+[06-Nov-2012 10:46:04] PHP Fatal error:  Allowed memory size of 12582912 bytes exhausted (tried to allocate 6696 bytes) in /home/sequilit/public_html/system/libs/image.php on line 34
+[06-Nov-2012 10:48:31] PHP Fatal error:  Allowed memory size of 12582912 bytes exhausted (tried to allocate 6696 bytes) in /home/sequilit/public_html/system/libs/image.php on line 34
+[06-Nov-2012 10:52:21] PHP Fatal error:  Allowed memory size of 12582912 bytes exhausted (tried to allocate 6696 bytes) in /home/sequilit/public_html/system/libs/image.php on line 34
+[07-Nov-2012 03:13:30] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sequilit/public_html/system/db/mysql.php on line 29
+[07-Nov-2012 03:13:54] PHP Fatal error:  Call to a member function get() on a non-object in /home/sequilit/public_html/admin/index.php on line 71
+[07-Nov-2012 03:14:03] PHP Fatal error:  Call to a member function get() on a non-object in /home/sequilit/public_html/admin/index.php on line 71
+[07-Nov-2012 03:14:53] PHP Fatal error:  Call to a member function get() on a non-object in /home/sequilit/public_html/admin/index.php on line 71
+[07-Nov-2012 03:17:27] PHP Fatal error:  Call to a member function get() on a non-object in /home/sequilit/public_html/admin/index.php on line 71
