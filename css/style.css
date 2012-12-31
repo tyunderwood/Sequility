@@ -192,13 +192,20 @@ h2  {
 
 margin-left: 5px;
 margin-bottom: 0px;
-font-size: 60px;
+font-size: 72px;
 color: #979797;
 font-family: hammer;
 font-weight: regular;
 font-style: regular;
 padding-bottom: 30px;
 margin-top: 20px;
+
+}
+
+h2 span {
+ font-size: 60px; 
+
+
 
 }
 
@@ -268,6 +275,7 @@ z-index: 2;
 height: 500px;
 background-repeat: no-repeat;
 background-position: 60px 80px;
+
 }
 
 #welcome img {
@@ -275,7 +283,6 @@ margin: auto;
 margin-top: 130px;
 
 display: block;
-
 
 }
 
@@ -291,6 +298,7 @@ background-color: black;
 z-index: 1;
 border-top: 1px solid white;  
   overflow: hidden;
+
 
   
   
@@ -333,6 +341,7 @@ max-width: 1600px;
 background-image: url('../images/bg2.png');
 background-color: black;
 z-index: 0;
+border-bottom: solid #ef7226 10px;
 
 }
 
