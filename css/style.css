@@ -44,9 +44,10 @@ font-family: arial, sans-serif;
         font-family: 'hammer';
         src: url('../fonts/hammer.eot');
         src: url('../fonts/hammer.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/hammer.svg') format('svg'),
              url('../fonts/hammer.woff') format('woff'),
-             url('../fonts/hammer.ttf') format('truetype'),
-             url('../fonts/hammer.svg#basicl') format('svg');
+             url('../fonts/hammer.ttf') format('truetype');
+
         font-weight: normal;
         font-style: normal;
     }
