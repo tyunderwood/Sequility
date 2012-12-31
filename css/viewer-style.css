@@ -1,0 +1,219 @@
+/*Header*/
+
+#header_bar {
+
+
+width: 100%;
+top: 0px;
+z-index: 40;
+height: 48px;
+background-color: black;
+}
+
+#headerx {
+
+top:0px;
+right:0px;
+color: white;
+margin-left:auto;
+margin-right:auto;
+z-index: 40;
+overflow: hidden;
+
+background-color: black;
+
+height: 48px;
+width: 100%;
+color: white;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-prev {
+width: 60px;
+height: 60px;
+display: block;
+position: absolute;
+top: 50%;
+ left: 30px;
+ margin-left: 30px;
+margin-top: -60px;
+background-image: none;
+background-color: #d01616;
+
+      -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+	
+	background-repeat: no-repeat;
+	
+	
+transform: rotate(45deg);
+-ms-transform: rotate(45deg); /* IE 9 */
+-webkit-transform: rotate(45deg); /* Safari and Chrome */
+-o-transform: rotate(45deg); /* Opera */
+-moz-transform: rotate(45deg); /* Firefox */
+
+border-top-left-radius:1000px;
+border-top-right-radius:1000px;
+border-bottom-right-radius:1000px;
+border-bottom-left-radius:1000px;
+}
+
+.flex-next {
+width: 60px;
+height: 110px;
+display: block;
+position: absolute;
+top: 50%;
+right: 0px;
+margin-top: -60px;
+background-image: url('../images/nav_next.png');
+
+
+
+      -webkit-transition: all 0.1s ease-in-out 0s;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    -o-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+	
+	background-repeat: no-repeat;
+	
+	border-bottom-left-radius:0px;
+}
+
+
+.flex-next:hover{
+margin-top: -70px;
+width: 60px;
+height: 60px;
+border-bottom-left-radius:0px;
+background-image: none;
+
+}
+
+.flex-prev:hover{
+margin-top: -70px;
+width: 80px;
+height: 80px;
+border-bottom-left-radius:0px;
+background-image: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Comic Viewer*/
+
+.comic-container {
+margin-top: 30px;
+width: 100%;
+text-align: center;
+
+}
+
+.comic-page {
+
+display: inline-block;
+margin-left: auto;
+margin-right: auto;
+z-index: 20000;
+
+}
+
+
+
+.viewport-wrapper{
+
+}
+
+.flex-prev {
+display: block;
+position: fixed;
+top: 50%;
+left: 0px;
+
+}
+
+.flex-next {
+
+display: block;
+position: fixed;
+top: 50%;
+right: 0px;
+
+
+
+}
+
+
+
+@media screen and (max-device-width: 966px) {
+ 
+ 
+ 
+/*forces comic page to take up 100% width in mobile browser */ 
+img.comic-page {
+
+
+    width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+	display: inline-block;
+	margin-left: 0;
+	margin-right: 0;
+	z-index: 20000;
+
+}
+ 
+ 
+.browser_notice_nexus7 {
+display: inline;
+width: 100%;
+text-align: center;
+font-size: 30px;
+color: #ccc;
+}
+ 
+.browser_notice_desktop {
+
+ display: none;
+
+}
+
+ .flex-next {
+ display: none;
+
+  }
+  
+ .flex-prev {
+ display: none;
+
+ }
+}
