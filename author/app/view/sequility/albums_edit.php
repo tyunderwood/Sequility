@@ -49,7 +49,7 @@
 				<?php echo $privacy_dropdown; ?>
 				</select></td></tr>
  			
-<tr><td>Album Cover :</td><td><input type="file" name="image" id="image"  size="60"  /><br />
+<tr><td>Album Cover :<br /> <i>JPG files only!</i></td><td><input type="file" name="image" id="image"  size="60"  /><br />
 	<?php if($fvalue['image']): ?><div align="center"><a href="<? echo HTTP_GALLERIA_LARGE."/".$fvalue['image']; ?>" target="_blank">View Existing Image</a></div><?php endif; ?></td></tr>
 
 
