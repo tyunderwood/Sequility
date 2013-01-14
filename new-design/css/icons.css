@@ -20,10 +20,15 @@
 }
 
 /* Use the following CSS code if you want to have a class per icon */
-[class^="icon-"]:before, [class*=" icon-"]:before {
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-colorlogo:before, .icon-grid-view:before, .icon-heart:before, .icon-heart-2:before, .icon-coffee:before, .icon-undo:before, .icon-redo:before, .icon-forward:before, .icon-box-add:before, .icon-backspace:before, .icon-copy:before, .icon-newspaper:before, .icon-bookmark:before, .icon-bookmark-2:before, .icon-remove:before, .icon-clipboard:before, .icon-clipboard-2:before, .icon-cloud:before, .icon-upload:before, .icon-book-alt2:before, .icon-arrow-right:before, .icon-pencil:before, .icon-tag:before, .icon-screen:before, .icon-broadcast:before, .icon-colorlogowiths:before, .icon-github:before, .icon-reddit:before, .icon-android:before, .icon-apple:before, .icon-smiley:before, .icon-laptop:before, .icon-box-remove:before, .icon-upload-2:before, .icon-download:before, .icon-printer:before, .icon-mouse:before, .icon-cog:before, .icon-pinterest:before, .icon-paypal:before, .icon-enter:before, .icon-exit:before, .icon-headphones:before, .icon-plus:before, .icon-plus-2:before, .icon-minus:before, .icon-minus-2:before, .icon-book:before, .icon-file:before, .icon-compass:before, .icon-history:before, .icon-calendar:before, .icon-cabinet:before, .icon-database:before, .icon-mobile:before, .icon-monitor:before, .icon-iphone:before, .icon-book-2:before, .icon-book-alt:before, .icon-pen:before, .icon-locked:before, .icon-unlocked:before {
 	font-family: 'icomoon';
-	font-style: normal;
 	speak: none;
+	font-style: normal;
 	font-weight: normal;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
@@ -105,4 +110,112 @@
 }
 .icon-colorlogowiths:before {
 	content: "\e019";
+}
+.icon-github:before {
+	content: "\e01a";
+}
+.icon-reddit:before {
+	content: "\e01b";
+}
+.icon-android:before {
+	content: "\e01c";
+}
+.icon-apple:before {
+	content: "\e01d";
+}
+.icon-smiley:before {
+	content: "\e01e";
+}
+.icon-laptop:before {
+	content: "\e01f";
+}
+.icon-box-remove:before {
+	content: "\e020";
+}
+.icon-upload-2:before {
+	content: "\e021";
+}
+.icon-download:before {
+	content: "\e022";
+}
+.icon-printer:before {
+	content: "\e023";
+}
+.icon-mouse:before {
+	content: "\e024";
+}
+.icon-cog:before {
+	content: "\e025";
+}
+.icon-pinterest:before {
+	content: "\e026";
+}
+.icon-paypal:before {
+	content: "\e027";
+}
+.icon-enter:before {
+	content: "\e028";
+}
+.icon-exit:before {
+	content: "\e029";
+}
+.icon-headphones:before {
+	content: "\e02a";
+}
+.icon-plus:before {
+	content: "\e02b";
+}
+.icon-plus-2:before {
+	content: "\e02c";
+}
+.icon-minus:before {
+	content: "\e02d";
+}
+.icon-minus-2:before {
+	content: "\e02e";
+}
+.icon-book:before {
+	content: "\e02f";
+}
+.icon-file:before {
+	content: "\e030";
+}
+.icon-compass:before {
+	content: "\e031";
+}
+.icon-history:before {
+	content: "\e032";
+}
+.icon-calendar:before {
+	content: "\e033";
+}
+.icon-cabinet:before {
+	content: "\e034";
+}
+.icon-database:before {
+	content: "\e035";
+}
+.icon-mobile:before {
+	content: "\e036";
+}
+.icon-monitor:before {
+	content: "\e037";
+}
+.icon-iphone:before {
+	content: "\e038";
+}
+.icon-book-2:before {
+	content: "\e039";
+}
+.icon-book-alt:before {
+	content: "\e03a";
+}
+.icon-pen:before {
+	content: "\e03b";
+}
+.icon-locked:before {
+	content: "\e03c";
+}
+.icon-unlocked:before {
+	content: "\e03d";
 }
