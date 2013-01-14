@@ -217,7 +217,7 @@ h2 span {
 #page {
 
 min-width: 800px;
-max-width: 1600px;
+max-width: 2600px;
 margin-left: auto;
 margin-right: auto;
 overflow: hidden;
@@ -618,23 +618,25 @@ font-size: 12pt;
 
 }
 
+
+
 .flex-prev {
 width: 60px;
 height: 110px;
 display: block;
 position: absolute;
 top: 50%;
- left: 0px;
+ left: 30px;
+ margin-left: 30px;
 margin-top: -60px;
+background-image: none;
 background-image: url('../images/nav_prev.png');
-
-
       -webkit-transition: all 0.1s ease-in-out 0s;
     -moz-transition: all 0.1s ease-in-out 0s;
     -o-transition: all 0.1s ease-in-out 0s;
     transition: all 0.1s ease-in-out 0s;
-	
-	background-repeat: no-repeat;
+  
+
 }
 
 .flex-next {
@@ -653,24 +655,46 @@ background-image: url('../images/nav_next.png');
     -moz-transition: all 0.1s ease-in-out 0s;
     -o-transition: all 0.1s ease-in-out 0s;
     transition: all 0.1s ease-in-out 0s;
-	
-	background-repeat: no-repeat;
+  
+  background-repeat: no-repeat;
+  
+
 }
 
 
 .flex-next:hover{
+margin-top: -70px;
+
+border-bottom-left-radius:0px;
+background-image: url('../images/nav_next.png');
+
+}
 
 
-background-image: url('../images/nav_next_2.png');
+.flex-next:active{
+margin-top: -60px;
+
+border-bottom-left-radius:0px;
+background-image: url('../images/nav_next.png');
 
 }
 
 .flex-prev:hover{
+margin-top: -70px;
 
-
-background-image: url('../images/nav_prev_2.png');
+background-image: url('../images/nav_prev.png');
 
 }
+
+
+.flex-prev:active{
+margin-top: -60px;
+
+background-image: url('../images/nav_prev.png');
+
+}
+
+
 
 
 @media screen and (min-width: 1110px) {
