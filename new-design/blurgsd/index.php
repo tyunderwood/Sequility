@@ -1,418 +1,460 @@
 <!DOCTYPE html>
-<html>
-
+<html><!-- /gallery/index.php-->
 <head>
-
-
-<link rel="icon" 
-      type="image/png" 
-      href="images/favicom.png">
-	<meta charset="UTF-8">
-	
-	<title>Sequility</title>
-	
-
-
-
-	
-
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	<link rel="stylesheet" href="css/flexslider.css" type="text/css">
-			
-			
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/icons.css">		
-			
-			
-			
-	
-			
-			
-			
-			
-			
-		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>	
-			
-			
-			
-			
-			
-			
-
-</head>
-
-<body>
-
-
-
-
-
-
-<div id="page"> 
-
-
-
-<span aria-hidden="true" data-icon="&#xe019;"  class="float-home"></span>
-
-<div id="welcome" class="fade-in one"> 
-<img src="images/logotext.png" />
-
-</div>
-
-
-<div id="welcome_bg">
-
-
-  <ul class="slides">
-		
-		<li>
-		
-		<img src="http://dresdencodak.com/comics/2012-06-13-dark_science_act_2.jpg" class="welcome_photo">
-		<div class="welcome_title">
-		<h3>Dresden Codak</h3>
-		</div>
-		</li>
-		
-		<li>
-		
-		<img src="http://www.meekcomic.com/comics/2008-12-27-Ch01--CoverWeb.jpg" class="welcome_photo">
-		
-		</li>
-		
-		<li>
-		
-		<img src="http://www.rice-boy.com/vattu/001.png" class="welcome_photo">
-		
-		</li>
-		
-		<li>
-		
-		<img src="http://www.texility.com/galleria/large/page_99_1350250814_2.jpg" class="welcome_photo">
-		
-		</li>
-		
-		<li>
-		
-		<img src="http://www.texility.com/galleria/large/page_99_1350250814_2.jpg" class="welcome_photo">
-		
-		</li>
-		
-		<li>
-		
-		<img src="http://www.texility.com/galleria/large/page_99_1350250814_15.jpg" class="welcome_photo">
-		
-		</li>
-		
-  </ul>
-
-</div>
-<div id="welcome_bg2">
-
-
-
-</div>
-
-
-
-<div id="content"> 
-
-
-
-
-
-
-
-
-
-
-
-<h2><span aria-hidden="true" data-icon="&#xe000;" class="icon"></span> New Comics for You </h2>
-
-<!-- Slider -->
-<div class="flexslider">
-
-
-  <ul class="slides">
-  
-
-	
-
-
-
-<li class="albumbox" style="background-image: url('images/covers/dresden1.png');" title="row1">
-
-
-
-<div class="thumbnail"  style="">
-
-<a href="comic_viewer.html">
-
-
-<div class="read_beginning button">
-<h2><span aria-hidden="true" data-icon="&#xe013;" class="icon"></span></h2>
-</div>
-
-<div class="newest_page button">
-<h2>READ NEWEST PAGE</h2>
-</div>
-<div class="title">
-</div>
-
-</a>
-
-</div>
-
-</li>
-	
-	
-
-
-
-
-
-
-
-  
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-<h2><span aria-hidden="true" data-icon="&#xe01b;" class="icon"></span> Trending on Reddit</h2>
-
-
-  
-
-
-
-
-</div>
-
-the masthead
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<title>Sequility</title>
+<link rel="shortcut icon" href="http://www.sequility.com//pictures/35/favicon.png" type="image/x-icon">
+<link rel="icon" href="http://www.sequility.com//pictures/35/favicon.png" >
+<meta name="description" content="Comics" />
+
+<meta name="author" content="emediaboard, novility" />
+<meta name="keywords" content="novility,novels, sequencial,serialized,comics" />
+<link rel="stylesheet" href="../includes/css/style.css">
+<link rel="stylesheet" href="../includes/css/icons.css">			
+<link rel="stylesheet" href="../includes/css/flexslider.css" type="text/css">			
+
+<?php
+$name=$_GET['name'];
+$debug=$_GET['debug'];
+if (is_numeric($name)) {
+// set gallery id to filter for 1 gallery
+$gallery_id = $name;
+$gallery_search_str=" AND amg_gallery.gallery_id = $gallery_id ";
+} else if (ctype_alpha(substr($name,0,1))) {
+//search for gallery by name
+$gallery_name=$name;
+$gallery_search_str=" AND ( url_name='$gallery_name' ";
+$gallery_search_str.=" OR name='$gallery_name' ) ";
+} else {
+//show all albums/strips
+$gallery_search_str="";
+}
+
+						require('../database_connection.php'); 
+						$album_sql_str = " SELECT amg_albums.*, amg_gallery.name, amg_gallery.url_name, ".
+							" amg_gallery.gallery_id FROM amg_gallery INNER JOIN amg_albums ".
+							" ON amg_gallery.gallery_id=amg_albums.gallery_id WHERE pictures>0 $gallery_search_str ";
+						$albums = mysql_query($album_sql_str);
+						$row_count = mysql_num_rows($albums);
+						if ($row_count==0) {
+						echo "Sorry we can't find the gallery you are looking for, but here are some to enjoy!";
+						$album_sql_str = " SELECT amg_albums.*, amg_gallery.name, amg_gallery.url_name, ".
+							" amg_gallery.gallery_id FROM amg_gallery INNER JOIN amg_albums ".
+							" ON amg_gallery.gallery_id=amg_albums.gallery_id WHERE pictures>0 ";
+						$albums = mysql_query($album_sql_str);
+						}
+						if ($debug==1) {
+						echo $album_sql_str;
+						}
+
+
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.flexslider.js"></script>
-
+<script src="../includes/js/jquery.flexslider.js"></script>
 
 <!-- Place in the <head>, after the three links -->
+
 <script type="text/javascript" charset="utf-8">
+
   $(window).load(function() {
+
     $('.flexslider').flexslider({
+
 	
+
 namespace: "flex-",             //{NEW} String: Prefix string attached to the class of every element generated by the plugin
+
 selector: ".slides > li",       //{NEW} Selector: Must match a simple pattern. '{container} > {slide}' -- Ignore pattern at your own peril
+
 animation: "slide",              //String: Select your animation type, "fade" or "slide"
+
 easing: "swing",               //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+
 direction: "horizontal",        //String: Select the sliding direction, "horizontal" or "vertical"
+
 reverse: false,                 //{NEW} Boolean: Reverse the animation direction
+
 animationLoop: false,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+
 smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
+
 startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+
 slideshow: false,                //Boolean: Animate slider automatically
+
 slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+
 animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
+
 initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
+
 randomize: false,               //Boolean: Randomize slide order
+
  
+
 // Usability features
+
 pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+
 pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+
 useCSS: true,                   //{NEW} Boolean: Slider will use CSS3 transitions if available
+
 touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
+
 video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
+
  
+
 // Primary Controls
+
 controlNav: true,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+
 directionNav: true,             //Boolean: Create navigation for previous/next navigation? (true/false)
+
 prevText: "",           //String: Set the text for the "previous" directionNav item
+
 nextText: "",               //String: Set the text for the "next" directionNav item
+
  
+
 // Secondary Navigation
+
 keyboard: true,                 //Boolean: Allow slider navigating via keyboard left/right keys
+
 multipleKeyboard: false,        //{NEW} Boolean: Allow keyboard navigation to affect multiple sliders. Default behavior cuts out keyboard navigation with more than one slider present.
+
 mousewheel: false,              //{UPDATED} Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+
 pausePlay: false,               //Boolean: Create pause/play dynamic element
+
 pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item
+
 playText: 'Play',               //String: Set the text for the "play" pausePlay item
+
  
+
 // Special properties
+
 controlsContainer: "",          //{UPDATED} Selector: USE CLASS SELECTOR. Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be ".flexslider-container". Property is ignored if given element is not found.
+
 manualControls: "",             //Selector: Declare custom control navigation. Examples would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.
+
 sync: "",                       //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
+
 asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
+
  
+
 // Carousel Options
+
 itemWidth: 220,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
+
 itemMargin: 25,                  //{NEW} Integer: Margin between carousel items.
+
 minItems: 0,                    //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
+
 maxItems: 0,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+
 move: 0,                        //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
+
  
+
 // Callback API
+
 start: function(){},            //Callback: function(slider) - Fires when the slider loads the first slide
+
 before: function(){},           //Callback: function(slider) - Fires asynchronously with each slider animation
+
 after: function(){},            //Callback: function(slider) - Fires after each slider animation completes
+
 end: function(){},              //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
+
 added: function(){},            //{NEW} Callback: function(slider) - Fires after a slide is added
+
 removed: function(){}           //{NEW} Callback: function(slider) - Fires after a slide is removed
+
 	
+
 	});
+
 	
+
    $('#welcome_bg').flexslider({
+
    
+
 namespace: "flex-",             //{NEW} String: Prefix string attached to the class of every element generated by the plugin
+
 selector: ".slides > li",       //{NEW} Selector: Must match a simple pattern. '{container} > {slide}' -- Ignore pattern at your own peril
+
 animation: "fade",              //String: Select your animation type, "fade" or "slide"
+
 easing: "swing",               //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+
 direction: "horizontal",        //String: Select the sliding direction, "horizontal" or "vertical"
+
 reverse: false,                 //{NEW} Boolean: Reverse the animation direction
+
 animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+
 smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
+
 startAt: 1,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+
 slideshow: true,                //Boolean: Animate slider automatically
+
 slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+
 animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
+
 initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
+
 randomize: true,               //Boolean: Randomize slide order
+
  
+
 // Usability features
+
 pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+
 pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+
 useCSS: true,                   //{NEW} Boolean: Slider will use CSS3 transitions if available
+
 touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
+
 video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
+
  
+
 // Primary Controls
+
 controlNav: false,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+
 directionNav: false,             //Boolean: Create navigation for previous/next navigation? (true/false)
+
 prevText: "Previous",           //String: Set the text for the "previous" directionNav item
+
 nextText: "Next",               //String: Set the text for the "next" directionNav item
+
  
+
 // Secondary Navigation
+
 keyboard: true,                 //Boolean: Allow slider navigating via keyboard left/right keys
+
 multipleKeyboard: false,        //{NEW} Boolean: Allow keyboard navigation to affect multiple sliders. Default behavior cuts out keyboard navigation with more than one slider present.
+
 mousewheel: false,              //{UPDATED} Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+
 pausePlay: false,               //Boolean: Create pause/play dynamic element
+
 pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item
+
 playText: 'Play',               //String: Set the text for the "play" pausePlay item
+
  
+
 // Special properties
+
 controlsContainer: "",          //{UPDATED} Selector: USE CLASS SELECTOR. Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be ".flexslider-container". Property is ignored if given element is not found.
+
 manualControls: "",             //Selector: Declare custom control navigation. Examples would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.
+
 sync: "",                       //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
+
 asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
+
  
+
 // Carousel Options
+
 itemWidth: 0,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
+
 itemMargin: 0,                  //{NEW} Integer: Margin between carousel items.
+
 minItems: 1,                    //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
+
 maxItems: 1,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+
 move: 0,                        //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
+
  
+
 // Callback API
+
 start: function(){},            //Callback: function(slider) - Fires when the slider loads the first slide
+
 before: function(){},           //Callback: function(slider) - Fires asynchronously with each slider animation
+
 after: function(){},            //Callback: function(slider) - Fires after each slider animation completes
+
 end: function(){},              //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
+
 added: function(){},            //{NEW} Callback: function(slider) - Fires after a slide is added
+
 removed: function(){}           //{NEW} Callback: function(slider) - Fires after a slide is removed
+
    
+
    });
 
+
+
   });
+
 </script>
-			
-			
-			
-			
-			
-			
-			
-		
+
+<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>	
+
+</head>
+<body>
+<div id="page"> 
+
+	<div id="content"> 
+
+		<span aria-hidden="true" data-icon="&#xe019;"  class="float-home"></span>
+
+		<div id="welcome" class="fade-in one"> 
+
+		<img src="../includes/images/logotext.png" />
+
+		</div>
+
+		<div id="welcome_bg">
+
+		  <ul class="slides">
+				<li>
+
+				<img src="http://www.sequility.com/galleria/large/page_162_1360990254_1.jpg" class="welcome_photo">
+
+				<div class="welcome_title">
+
+				<h3>Dresden Codak</h3>
+
+				</div>
+
+				</li>
+
+				
+
+				<li>
+
+				
+
+				<img src="http://www.sequility.com/galleria/large/page_162_1360990254_1.jpg" class="welcome_photo">
+
+				
+
+				</li>
+
+				
+
+				<li>
+
+				
+
+				<img src="http://www.sequility.com/galleria/large/page_162_1360990254_1.jpg" class="welcome_photo">
+
+				
+
+				</li>
+
+				
+
+				<li>
+
+				
+
+				<img src="http://www.sequility.com/galleria/large/page_161_1360983650_4.jpg" class="welcome_photo">
+
+				
+
+				</li>
+
+				
+
+				<li>
+
+				
+
+				<img src="http://www.sequility.com/galleria/large/page_161_1360983650_4.jpg" class="welcome_photo">
+
+				
+
+				</li>
+
+				
+
+				<li>
+
+				
+
+				<img src="http://www.sequility.com/galleria/large/page_161_1360983650_4.jpg" class="welcome_photo">
+
+				
+
+				</li>
+
+				
+
+		  </ul>
 
 
 
+		</div>
+
+		<div id="welcome_bg2">
+
+		</div>
 
 
+		<h2><span aria-hidden="true" data-icon="&#xe000;" class="icon"></span> The Underground Comix Show </h2>
 
+		<!-- Slider -->
 
+		<div class="flexslider">
 
+			<ul class="slides">
+					<?	
+						while ($row=mysql_fetch_assoc($albums)) {
+						$albumcover=$row['image'];
+						
+						?>
+							<li class="albumbox" style="background-image: url('../galleria/large/<? echo $albumcover;?>');  background-size: Auto 340px; ">
+								<a href="../strip/index.php?name=<?php echo $row['album_id'] ;?>">
+									<div class="thumbnail"  style="">
+										<div class="pictext">
+											<h2><?php echo $row['title'] ;?></h2>
+										</div>
+									</div>	
+								</a>					
+							</li>
+						<?
+						}
+						?>  
+						<!-- SAMPLE of different divs and what they look like
+							<li class="albumbox" style="background-image: url('../new-design/images/covers/dresden1.png');" title="row1">
+							<a href="comic_viewer.html"><div class="thumbnail"  style="">
+								
+									<div class="read_beginning button">
+										<h2>READ FROM THE BEGINNING</h2>
+									</div>
+									<div class="newest_page button">
+										<h2>READ NEWEST PAGE</h2>
+									</div>
+									<div class="title">
+										<h2>Test</h2>
+									</div>
+									<div class="pictext">
+										<h2>Dark Science</h2>
+									</div>
+								
+							</div></a>	
+							</li> -->
+			</ul>
+		</div>
+	</div>
+</div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
